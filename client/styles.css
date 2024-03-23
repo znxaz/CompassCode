@@ -1,6 +1,12 @@
-h1{
-    border: 1px solid black;
-    background-color: green; 
-    font-weight: 900; 
+body,html{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    color: white;
+}
 
+.wave{
+    z-index: -1;
+    position: absolute;
 }
