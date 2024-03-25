@@ -1,45 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Roadmap Log in</title>
-    <link rel="stylesheet" href="styles.css">
-    <script href="index.js"></script>
-</head>
-<body>
-
-    <svg class="wave" viewBox="0 0 500 200">
+    <link rel="stylesheet" href="styles.css" />
+    <script src="index.js" defer></script>
+  </head>
+  <body>
+    <div id="app">
+      <svg class="wave" viewBox="0 0 500 200">
         <path d="M 0,100 C 150,200 350,0 500,100 L 500,00 L 0,0"></path>
       </svg>
 
+      <p class="ini-message">Hello! Welcome To Our Website!</p>
 
-      
+      <div class="centered">
+        <p>Please enter your information</p>
 
+        <form action="" id="login-form">
+          <label for="username">
+            <input
+              type="text"
+              class="inputs text-inputs"
+              name="user-name"
+              id="un1"
+              placeholder="Username"
+              required
+            />
+            <br />
+          </label>
 
-   <p class="ini-message">Hello! Welcome To Our Website!</p>
+          <label for="password">
+            <input
+              type="password"
+              class="inputs text-inputs"
+              name="pass-word"
+              id="ps1"
+              placeholder="Password"
+              required
+            />
+            <br />
+          </label>
 
-
-   <div class="centered">
-    <p>Please enter your information</p>
-
-    <form action="">
-        <label for="username">
-            <input type="text" class="inputs text-inputs" name="user-name" id="un1" placeholder="Username" required> <br>
-        </label>
-
-
-        <label for="password">
-            <input type="password" class="inputs text-inputs" name="pass-word" id="ps1" placeholder="Password" required> <br>
-        </label>
-
-
-        <label for="submition">
-            <input type="submit" class="inputs" value="Submit">
-        </label>
-
-    </form>
-
-   </div>
-</body>
+          <label for="submition">
+            <input type="submit" class="inputs" value="Submit" />
+          </label>
+        </form>
+      </div>
+    </div>
+  </body>
 </html>
