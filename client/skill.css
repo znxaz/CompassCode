@@ -1,16 +1,16 @@
-body{
+body {
     background-color: rgb(171, 171, 171);
-    
+
 }
 
-*{
-    font-family:Verdana, Geneva, Tahoma, sans-serif;
+* {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     text-align: center;
     vertical-align: middle;
     font-weight: bold;
 }
 
-.circles{
+.circles {
     border: 3px solid rgb(0, 0, 0);
     background-color: white;
     border-radius: 50%;
@@ -18,14 +18,36 @@ body{
     height: 100px;
     width: 100px;
     display: inline-block;
-    
+
 }
 
-.inside{
+.inside {
     text-align: center;
-    
+
     margin: 40% 0 0 0;
 }
 
+.lines-default {
+    content: "";
+    position: absolute;
+    border-top: 2px solid rgb(0, 0, 0);
+    width: 100px;
+    transform-origin: 0% 0%;
+    text-align: center;
+    margin-left: 40%;
+    
+}
 
+.Dashed{
+    border: 1px dashed black;
+    
+}
 
+.rightD{
+    transform: rotate(45deg);
+    
+}
+
+.leftD{
+    transform: rotate(135deg);
+}
