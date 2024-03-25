@@ -1,0 +1,31 @@
+body{
+    background-color: rgb(171, 171, 171);
+    
+}
+
+*{
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    text-align: center;
+    vertical-align: middle;
+    font-weight: bold;
+}
+
+.circles{
+    border: 3px solid rgb(0, 0, 0);
+    background-color: white;
+    border-radius: 50%;
+    margin-left: 5%;
+    height: 100px;
+    width: 100px;
+    display: inline-block;
+    
+}
+
+.inside{
+    text-align: center;
+    
+    margin: 40% 0 0 0;
+}
+
+
+
