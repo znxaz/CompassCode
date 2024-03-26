@@ -5,43 +5,62 @@ body {
 
 * {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    text-align: center;
-    vertical-align: middle;
+   
     font-weight: bold;
 }
 
 .circles {
-    border: 3px solid rgb(0, 0, 0);
+    border: 3px solid black;
     background-color: white;
     border-radius: 50%;
     margin-left: 5%;
     height: 100px;
     width: 100px;
     display: inline-block;
-
+text-align: center;
 }
 
 .inside {
     text-align: center;
-
+    display: inline-block;
     margin: 40% 0 0 0;
 }
 
-.lines-default {
+a{
+    color: black;
+}
+
+
+
+
+
+.lines-solid {
     content: "";
     position: absolute;
-    border-top: 2px solid rgb(0, 0, 0);
+    border-top: 2px solid black;
     width: 100px;
     transform-origin: 0% 0%;
     text-align: center;
     margin-left: 40%;
-    
+
 }
 
-.Dashed{
-    border: 1px dashed black;
-    
+.lines-dashed{
+    content: "";
+    position: absolute;
+    border-top: 2px dashed black;
+    width: 100px;
+    transform-origin: 0% 0%;
+    text-align: center;
+   margin-left: 40%;
+   
 }
+
+.hidden{
+    display: none;
+}
+
+
 
 .rightD{
     transform: rotate(45deg);
@@ -50,4 +69,19 @@ body {
 
 .leftD{
     transform: rotate(135deg);
+}
+
+.tree{
+    display: flex;
+    flex-direction: column;
+}
+
+.circle-div{
+    display: flex;
+    justify-content:center;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
 }

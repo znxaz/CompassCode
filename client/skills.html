@@ -6,32 +6,43 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>SkillTree</title>
     <link rel="stylesheet" href="skill.css">
+    <script src="script.js" defer></script>
 </head>
 
 <body>
     <div class="tree">
+
+        <div class="circle-div">
         <span class="circles">
-            <p class="inside">C++</p>
-        </span>
-        
-        <span class="circles">
-            <p class="inside">Java</p>
-        </span>
-        <span class="circles">
-            <p class="inside">Python</p>
+            <a href="https://www.w3schools.com/cpp/" id="cParent" class="inside hover-link" target="_blank">C++ </a>
         </span>
 
+        <span class="circles">
+            <a href="" class="inside hover-link">Java</a>
+        </span>
+        <span class="circles">
+            <a href="" class="inside hover-link">Python</a>
+        </span>
     </div>
 
+        <div class="container">
+        <div class="hidden" id="cBaby">
+            <div class="lines-dashed leftD">
+            </div>
+
+            <div class="lines-solid rightD">
+            </div>
+
+        </div>
+
+        <div class="hidden">
+            <div class="lines-dashed leftD" style="margin-left:52% ;"></div>
+            <div class="lines-dashed rightD" style="margin-left:52% ;"></div>
+        </div>
+
+    </div>
     
-    <div class="lines-default Dashed leftD">
-    </div>
-
-    <div class="lines-default rightD">
-    </div>
-    
-
-
+</div>
 </body>
 
 </html>
