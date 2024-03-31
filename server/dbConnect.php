@@ -1,31 +1,20 @@
 <?php
-$servername = "localhost"; // Use "mysql" if your PHP runs in another Docker container in the same network
-$username = "user";
-$password = "password"; 
-$database = "web_project"; 
+// Data Source Name (DSN) specifying the database driver, host, and database name
+$dsn = "mysql:host=mysql;dbname=web_project";
+$username = "root"; 
+$password = "root"; 
 
-$conn = new mysqli($servername, $username, $password, $database, 3308); // Port 3308 as mapped in your Docker setup
-
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
+try {
+    // Creating a new PDO (PHP Data Object) instance to represent a connection to the database
+    $pdo = new PDO($dsn, $username, $password); 
+    
+    // Set an attribute on the PDO object. In this case, we're setting the error reporting mode.
+    // PDO::ATTR_ERRMODE: This is used to specify the error reporting mode. The three modes are silent, warning, and exception.
+    // PDO::ERRMODE_EXCEPTION: This mode throws exceptions whenever a database error occurs.
+    // This means if there's an error with a query, instead of just returning false or emitting a warning,
+    // an exception will be thrown which can be caught in a try-catch block.
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION); 
+    
+} catch(PDOException $err) {
+    echo "Connection Error: " . $err->getMessage(); 
 }
-echo "Connected successfully";
-
-$sql = "CREATE TABLE Users (
-    id INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
-    firstName VARCHAR(30) NOT NULL,
-    lastName VARCHAR(30) NOT NULL,
-    UserName VARCHAR(30) NOT NULL,
-    Password VARCHAR(30) NOT NULL,
-    email VARCHAR(50),
-    reg_date TIMESTAMP DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP
-)";
-
-if ($conn->query($sql) === TRUE) {
-    echo "Table Users created successfully";
-} else {
-    echo "Error creating table: " . $conn->error;
-}
-
-$conn->close();
-?>
