@@ -1,5 +1,21 @@
 <?php
-require '../dbConnect.php'; 
+function findComposerAutoload() {
+    $dir = __DIR__;
+    while (!file_exists($dir . '/vendor/autoload.php')) {
+        $dir = dirname($dir);
+        if ($dir === '/') {
+            // Prevents infinite loop in case the autoload.php file is not found
+            throw new Exception('Unable to locate autoload.php. Please run composer install.');
+        }
+    }
+    return $dir . '/vendor/autoload.php';
+}
+
+require_once findComposerAutoload();
+
+require __DIR__ . '/../dbConnect.php';
+require '/var/www/vendor/autoload.php';
+use Ramsey\Uuid\Uuid;
 function signupHandler($pdo)
 {
     try {
@@ -20,8 +36,9 @@ function signupHandler($pdo)
                 echo "Username already exists, please try another one.";
             } else {
                 $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+                $uuid = Uuid::uuid4()->toString();
                 $InsertUser = $pdo->prepare(
-                    "INSERT INTO users (username, email, password) VALUES (?, ?, ?)"
+                    "INSERT INTO users (uuid, username, email, password) VALUES (?, ?, ?)"
                 );
                 $InsertUser->execute([$username, $email, $hashedPassword]);
             }

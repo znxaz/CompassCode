@@ -1,0 +1,12 @@
+RewriteEngine On
+
+# Specify the default page to serve if the client requests a directory
+DirectoryIndex index.html
+
+# Serve the requested resource as-is if it exists.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Forward all other requests to index.php for routing.
+# This assumes index.php is in the same directory as this .htaccess file.
+RewriteRule ^ index.php [L]

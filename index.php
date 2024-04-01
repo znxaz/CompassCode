@@ -1,6 +1,8 @@
 <?php
-require __DIR__ . '/server/dbConnect.php';
-require __DIR__ . '/server/auth/signup.php';  
+require '/var/www/project/bootstrap.php';
+require '/var/www/server/dbConnect.php';
+require '/var/www/server/auth/signup.php';
+
     
     $routes = [
         '/signup' => 'signupHandler',

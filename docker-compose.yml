@@ -6,8 +6,9 @@ services:
     ports:
       - "8080:80"
     volumes:
-      - ./client/:/var/www/html
-      - ./server/:/var/www/server
+    - .:/var/www/project
+    depends_on:
+      - mysql
   mysql:
     image: mysql:latest
     environment:
