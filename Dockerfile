@@ -1,43 +1,41 @@
-# Use the official PHP 8.1 image with Apache
 FROM php:8.1-apache
 
-# Set environment variable to allow Composer plugins to run
+# Enable mod_rewrite for Apache
+RUN a2enmod rewrite
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    libzip-dev \
+    unzip \
+    git \
+    && rm -rf /var/lib/apt/lists/*
+
+
+# Install system packages including mysql client
+RUN apt-get update && apt-get install -y default-mysql-client && rm -rf /var/lib/apt/lists/*
+
+# Install the PHP zip extension
+RUN docker-php-ext-install zip pdo pdo_mysql
+
+# Add apache conf for AllowOverride All
+COPY my-apache.conf /etc/apache2/conf-available/my-apache.conf
+RUN a2enconf my-apache
+
 ENV COMPOSER_ALLOW_SUPERUSER=1
 
-# Install system dependencies & PHP extensions
-RUN apt-get update && apt-get install -y \
-        git \
-        zip \
-        unzip \
-        curl \
-        libfreetype6-dev \
-        libjpeg62-turbo-dev \
-        libpng-dev \
-        libxml2-dev && \
-    docker-php-ext-install pdo_mysql && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
+# Install Composer
+RUN php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');" \
+    && php composer-setup.php --install-dir=/usr/local/bin --filename=composer \
+    && php -r "unlink('composer-setup.php');"
 
-# Install Composer globally
-RUN curl -sS https://getcomposer.org/installer | php -- \
-        --install-dir=/usr/local/bin --filename=composer
+# Copy the Composer JSON files first to leverage Docker cache
+COPY ./composer.* /var/www/html/
 
-# Enable Apache mod_rewrite and update Apache configuration
-RUN a2enmod rewrite && \
-    sed -i 's!/var/www/html!/var/www/html!g' /etc/apache2/sites-available/000-default.conf && \
-    sed -i 's!AllowOverride None!AllowOverride All!g' /etc/apache2/apache2.conf
+# Install project dependencies with Composer
+RUN composer install --no-dev --optimize-autoloader
 
-# Copy application files, set working directory, and install Composer dependencies
-COPY . /var/www/project
-WORKDIR /var/www/project
-RUN composer install
+# Copy the rest of the application
+COPY . /var/www/html
 
-# Symlink, copy files to web root, and set permissions
-RUN ln -s /var/www/project/server /var/www/html/server && \
-    cp index.php /var/www/html/index.php && \
-    cp -r client/* /var/www/html/ && \
-    chown -R www-data:www-data /var/www/project && \
-    chown -R www-data:www-data /var/www/html
-
-# Expose port 80
-EXPOSE 80
+# Optimize Composer autoloader
+RUN composer dump-autoload --optimize

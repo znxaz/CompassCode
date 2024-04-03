@@ -1,25 +1,27 @@
-version: '3.8'
-
+version: '3'
 services:
-  web:
+  db:
+    image: mysql:latest
+    environment:
+      - MYSQL_DATABASE=webproject
+      - MYSQL_USER=php_docker
+      - MYSQL_PASSWORD=password
+      - MYSQL_ALLOW_EMPTY_PASSWORD=yes
+    volumes:
+      - db_data:/var/lib/mysql
+
+  www:
     build: .
     ports:
       - "8080:80"
-    volumes:
-    - .:/var/www/project
-    depends_on:
-      - mysql
-  mysql:
-    image: mysql:latest
-    environment:
-      MYSQL_ROOT_PASSWORD: "root"
-      MYSQL_DATABASE: "web_project"
-      MYSQL_USER: "user"
-      MYSQL_PASSWORD: "public"
+
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
     ports:
-      - "3307:3306"
-    volumes:
-      - mydbdata:/var/lib/mysql
+      - "8001:80"
+    environment:
+      - PMA_HOST=db
+      - PMA_PORT=3306
 
 volumes:
-  mydbdata:
+  db_data:

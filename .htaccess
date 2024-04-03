@@ -1,0 +1,11 @@
+RewriteEngine On
+
+# Serve index.html for the root
+RewriteRule ^$ /index.html [L]
+
+# Exclude existing files and directories from being redirected
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+# Redirect all other requests to index.php
+RewriteRule ^ index.php [QSA,L]
