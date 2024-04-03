@@ -5,10 +5,10 @@ html {
   height: 100%;
   width: 100%;
   overflow: hidden;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+ font-family: 'roboto';
 }
 
-/* div to hold all the elements minus the body */
+
 #app {
   position: absolute;
   top: 0;
@@ -30,37 +30,91 @@ html {
   color: white;
 }
 
-.centered {
+
+
+.container  {
+  margin-top:-1%;
+  color: white;
+  background:linear-gradient(rgba(0, 0, 0, 0.301), rgba(0, 0, 0, 0.46));
+  width:fit-content;
+  height: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 5%;
+  padding: 50px 35px;
   text-align: center;
-  margin-top: 15%;
-  color: black;
-  font-weight: bolder;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.378);
+  box-shadow: 0 0 40px rgba(8, 7, 6, 0.6);
+  letter-spacing: 0.3px;
+  position: relative;
+  width: 17%;
+  
+  
 }
+
+
+
+.excluded{
+  text-align: left;
+}
+
+
+
 
 .inputs {
-  color: white;
-  border: 3px solid rgb(53, 53, 53);
-  background-color: black;
-  margin: 2px;
-  border-radius: 5px;
+  color: rgba(255, 255, 255, 0.808);
+  margin: 5px;
+  background-color: blue;
+  border: none;
+  outline: none;
   font-weight: bolder;
+  width: 70%;
+  transform: skew(-20deg);
+  padding: 10px;
+  
 }
+
+.inputs:hover{
+  cursor: pointer;
+}
+
+button:hover{
+  cursor: pointer;
+}
+
+.forgor{
+  text-align: center;
+  color: rgba(255, 255, 255, 0.808);
+  margin: 5px;
+  background-color: transparent;
+  border: none;
+  border-bottom: 1px solid rgb(255, 255, 255);
+ height: fit-content;
+  outline: none;
+  font-weight: bolder;
+  width: 70%;
+  transform: skew(-20deg);
+  padding: 10px;
+}
+
 
 .text-inputs {
-  width: 20%;
-  height: 20px;
-  border: 5px solid rgb(53, 53, 53);
-  background-color: white;
-  color: black;
+  width: 80%;
+  height: 25px;
+  margin-bottom:10% ;
+  border: none;
+  border-bottom: 2px solid grey;
+  outline: none;
+  background: transparent;
+  color: rgb(255, 255, 255);
 }
 
-.circle {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-
-  width: 150px;
-  height: 150px;
-  border-radius: 90px;
-  z-index: -1;
+.text-inputs::placeholder{
+  color: rgba(227, 227, 227, 0.823);
+  font-family: 'roboto';
 }
+
+
+
+

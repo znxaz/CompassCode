@@ -6,6 +6,11 @@
     <title>Roadmap Log in</title>
     <link rel="stylesheet" href="styles.css" />
     <script src="index.js" defer></script>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
   </head>
   <body>
     <div id="app">
@@ -15,26 +20,34 @@
 
       <p class="ini-message">Hello! Welcome To Our Website!</p>
 
-      <div class="centered">
-        <p>Please enter your information</p>
 
-        <form action="../server/index.php" method="POST" id="login-form">
+
+
+      <div class="container">
+        
+        <p style="font-size: large;"><b>Log In</b></p>
+
+
+      
+        <form action="" id="login-form">
           <label for="username">
             <input
               type="text"
-              class="inputs text-inputs"
+              class="text-inputs"
               name="user-name"
               id="un1"
               placeholder="Username"
+              style="margin-bottom: 20%;"
               required
             />
             <br />
+            
           </label>
-
+          
           <label for="password">
             <input
               type="password"
-              class="inputs text-inputs"
+              class="text-inputs"
               name="pass-word"
               id="ps1"
               placeholder="Password"
@@ -44,9 +57,17 @@
           </label>
 
           <label for="submition">
-            <input type="submit" class="inputs" value="Submit" />
+            <input type="submit" class="inputs" value="Log In" />
+          </label>
+
+          <br/>
+          <label for="iForgor" >
+            <button class="forgor" >Forgot Password?</button> <br/>
+           <button class="inputs" register>Sign Up</button>
           </label>
         </form>
+      
+
       </div>
     </div>
   </body>
