@@ -5,9 +5,9 @@ html {
   height: 100%;
   width: 100%;
   overflow: hidden;
- font-family: 'roboto';
+  font-family: "roboto";
+  background-image: url("./images/bacground2.jpeg");
 }
-
 
 #app {
   position: absolute;
@@ -17,104 +17,176 @@ html {
   height: 100%;
 }
 
-.wave {
-  z-index: -1;
+.logo {
   position: absolute;
+  top: 0; /* Adjust to position your logo */
+  left: 0; /* Adjust to position your logo */
+  width: 100px; /* Set your desired width */
+  height: 100px; /* Set your desired height */
+  z-index: 1; /* Make sure it is above other content */
 }
+
+.logo-container {
+  position: absolute;
+  top: -5em; /* Adjust to position your logo */
+  left: -8.5em; /* Adjust to position your logo */
+  width: 30em; /* Set your desired width */
+  height: 30em; /* Set your desired height */
+  background-image: url('./images/zo-04.png');
+  background-size: contain; /* Or 'cover' depending on the effect you want */
+  background-repeat: no-repeat;
+  z-index: 0; /* Ensures it's above the background */
+}
+
 
 .ini-message {
   text-align: center;
   margin: 5%;
   font-weight: bold;
   font-size: 300%;
-  color: white;
+  color: black;
 }
 
+.flex-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
 
-
-.container  {
-  margin-top:-1%;
-  color: white;
-  background:linear-gradient(rgba(0, 0, 0, 0.301), rgba(0, 0, 0, 0.46));
-  width:fit-content;
-  height: fit-content;
-  margin-left: auto;
-  margin-right: auto;
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  color: black;
+  background: rgba(255, 255, 255, 0.473);
   border-radius: 5%;
-  padding: 50px 35px;
+  padding: 60px 40px;
   text-align: center;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(7px);
   border: 1px solid rgba(255, 255, 255, 0.378);
-  box-shadow: 0 0 40px rgba(8, 7, 6, 0.6);
+  box-shadow: 0 0 30px rgba(8, 7, 16, 0.6);
   letter-spacing: 0.3px;
-  position: relative;
-  width: 17%;
-  
-  
+  width: auto;
+  height: auto;
+  max-width: 400px;
+  margin: auto;
+  min-width: 300px;
+  min-height: 350px;
 }
 
-
-
-.excluded{
+.excluded {
   text-align: left;
 }
 
-
-
-
 .inputs {
-  color: rgba(255, 255, 255, 0.808);
-  margin: 5px;
-  background-color: blue;
-  border: none;
+  color: #287b97;
+  margin: 0.3125em;
+  background-color: white;
+  border: 2px solid #287b97;
   outline: none;
   font-weight: bolder;
   width: 70%;
-  transform: skew(-20deg);
   padding: 10px;
-  
+  border-radius: 10px;
 }
 
-.inputs:hover{
+.inputs:hover {
   cursor: pointer;
 }
 
-button:hover{
+button:hover {
   cursor: pointer;
 }
 
-.forgor{
+.forgor {
   text-align: center;
-  color: rgba(255, 255, 255, 0.808);
-  margin: 5px;
+  color: black;
+  margin: 1px;
   background-color: transparent;
   border: none;
-  border-bottom: 1px solid rgb(255, 255, 255);
- height: fit-content;
+  height: fit-content;
   outline: none;
-  font-weight: bolder;
   width: 70%;
-  transform: skew(-20deg);
-  padding: 10px;
+  transform: none;
 }
-
 
 .text-inputs {
   width: 80%;
   height: 25px;
-  margin-bottom:10% ;
+  margin-bottom: 10%;
   border: none;
-  border-bottom: 2px solid grey;
+  border-bottom: 2px solid #287b97;
   outline: none;
   background: transparent;
-  color: rgb(255, 255, 255);
+  color: black;
 }
 
-.text-inputs::placeholder{
-  color: rgba(227, 227, 227, 0.823);
-  font-family: 'roboto';
+.text-inputs::placeholder {
+  color: #287b97;
+  font-weight: 500;
+  font-family: "roboto";
 }
 
+.inputs,
+.forgor,
+.text-inputs {
+  width: 80%;
+}
 
+.inputs,
+.forgor {
+  padding: 12px 24px;
+  margin: 10px 0;
+}
+.top-login {
+  margin-top: 3em;
+  margin-bottom: -2em;
+}
+.text-inputs {
+  width: 100%;
+  height: 1.5625rem;
+  padding: 0.3125rem 0.625rem;
+}
 
+#login-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
 
+.input-wrapper {
+  position: relative;
+  width: 80%;
+}
+.forgor {
+  position: absolute;
+  bottom: -1rem;
+  padding: 0.6rem 1rem;
+  right: 0;
+  left: 7rem;
+  color: #287b97;
+  background-color: transparent;
+  border: none;
+  cursor: pointer; /* If it's clickable */
+  outline: none;
+  transform: none;
+}
+.forgor:hover {
+  text-decoration: underline; /* Adds the underline on hover */
+}
+
+p {
+  margin-bottom: -0.5em;
+  color: #287b97;
+}
+
+.account-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  margin-top: 1rem;
+}

@@ -35,7 +35,7 @@ COPY ./composer.* /var/www/html/
 RUN composer install --no-dev --optimize-autoloader
 
 # Copy the rest of the application
-COPY . /var/www/html
+# COPY . /var/www/html
 
 # Optimize Composer autoloader
 RUN composer dump-autoload --optimize
