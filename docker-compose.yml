@@ -24,6 +24,11 @@ services:
     environment:
       - PMA_HOST=db
       - PMA_PORT=3306
+  mailhog:
+    image: mailhog/mailhog
+    ports:
+      - "8025:8025" # Web UI
+      - "1025:1025" # SMTP    
 
 volumes:
   db_data:

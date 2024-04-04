@@ -12,6 +12,10 @@ $routes = [
         require __DIR__ . '/localauth.php';
         loginHandler($pdo);
     },
+    '/forgor' => function() use ($pdo) {
+        require __DIR__ . '/forgor.php';
+        forgorPassword($pdo);
+    }
 ];
 
 $currentRoute = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);

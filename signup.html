@@ -21,19 +21,28 @@
           <form action="" id="login-form">
             <div class="input-wrapper">
             <label for="username">
-                <p class="excluded">Your Username</p>
+                <p class="excluded">Username</p>
               <input
                 type="text"
                 class="text-inputs"
                 name="user-name"
                 id="un1"
                 placeholder="Username"
-                style="margin-bottom: 20%"
                 required
               />
               <br />
             </label>
-            <p class="excluded">Your Password</p>
+            <label for="email">
+              <p class="excluded">Email</p>
+            <input
+              type="email"
+              class="text-inputs"
+              name="Email"
+              id="em1"
+              placeholder="eg: dietmilk@gmail.com"
+              required
+            />
+            <p class="excluded" >Password</p>
             <label for="password">
               <input
                 type="password"
@@ -42,19 +51,17 @@
                 id="ps1"
                 placeholder="Password"
                 required
-              />
-
-              <label for="email">
-                <p class="excluded">Your Email</p>
-              <input
-                type="email"
-                class="text-inputs"
-                name="Email"
-                id="em1"
-                placeholder="eg: dietmilk@gmail.com"
-                required
-              />
-              
+              />        
+              <p class="excluded" >Confirm Password</p>
+              <label for="password">
+                <input
+                  type="password"
+                  class="text-inputs extra-margins"
+                  name="pass-word"
+                  id="ps2"
+                  placeholder="Password"
+                  required
+                />       
             </div>
               <br />
             </label>

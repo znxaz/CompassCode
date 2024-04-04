@@ -1,38 +1,27 @@
 <?php 
 require __DIR__ . '/db.php';
+
 function loginHandler($pdo){
-    $username = $_GET['username']; 
-    $password = $_GET['password'];
-    try{
-        if($_SERVER["REQUEST_METHOD"] === "GET"){
-        $checkUsernameQuery = $pdo->prepare(
-            "SELECT username FROM users WHERE username = :username"
-        );
-        $checkUsernameQuery->bindParam(":username", $username);
-        $checkUsernameQuery->execute();
-        $userExists = $checkUsernameQuery->fetch(PDO::FETCH_ASSOC);
+    if($_SERVER["REQUEST_METHOD"] === "POST"){
+        $username = $_POST["username"] ?? null; 
+        $password = $_POST["password"] ?? null;
 
-        if($userExists){
-            $hashedPasswordQuery = $pdo->prepare(
-                "SELECT password FROM users where username = :username;"); 
-            $hashedPasswordQuery->bindParam(':username', $username); 
-            $hashedPassword = $hashedPasswordQuery->fetch(PDO::FETCH_ASSOC); 
-            if(password_verify($password, $hashedPassword)){
+        try{
+            $checkUsernameQuery = $pdo->prepare(
+                "SELECT username, password FROM users WHERE username = :username"
+            );
+            $checkUsernameQuery->bindParam(":username", $username);
+            $checkUsernameQuery->execute();
+            $user = $checkUsernameQuery->fetch(PDO::FETCH_ASSOC); 
+            if($user && password_verify($password, $user['password'])){
                 echo "Successfully Logged in!"; 
-
+            } else {
+                echo "Incorrect username or password."; 
             }
-            else{
-                echo "boohoo loser stay out!"; 
-            }
+        } catch(PDOException $err){
+            echo "An error occurred: " . $err->getMessage(); 
         }
-    }
-    else{
-        throw new ErrorException("This route '__DIR__' only hanldes GET requests"); 
-    }
-    }catch(PDOException $err){
-        echo "An error has occurred while trying to log in '$err'"; 
+    } else {
+        echo "This route only handles POST requests."; 
     }
 }
-
- 
-

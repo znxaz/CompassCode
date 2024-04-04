@@ -11,11 +11,11 @@ html {
 
 .logo {
     position: absolute;
-    top: 0; /* Adjust to position your logo */
-    left: 0; /* Adjust to position your logo */
-    width: 100px; /* Set your desired width */
-    height: 100px; /* Set your desired height */
-    z-index: 1; /* Make sure it is above other content */
+    top: 0; 
+    left: 0; 
+    width: 100px; 
+    height: 100px; 
+    z-index: 1; 
   }
 
   .logo-container {
@@ -40,8 +40,8 @@ html {
   .container {
     display: flex;
     flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
+    justify-content:space-evenly;
+    align-items:center;
     color: black;
     background: rgba(255, 255, 255, 0.473);
     border-radius: 5%;
@@ -62,7 +62,6 @@ html {
   .text-inputs {
     width: 80%;
     height: 25px;
-    margin-bottom: 10%;
     border: none;
     border-bottom: 2px solid #287b97;
     outline: none;
@@ -98,6 +97,10 @@ html {
 
   .excluded {
     text-align: left;
+  }
+
+  .extra-margins{
+    margin-bottom: 1.25em;
   }
 
   .inputs,

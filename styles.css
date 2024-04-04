@@ -65,7 +65,7 @@ html {
   padding: 60px 40px;
   text-align: center;
   backdrop-filter: blur(7px);
-  border: 1px solid rgba(255, 255, 255, 0.378);
+  border: 1px solid rgba(255, 255, 255, 0.582);
   box-shadow: 0 0 30px rgba(8, 7, 16, 0.6);
   letter-spacing: 0.3px;
   width: auto;
@@ -79,6 +79,11 @@ html {
 .excluded {
   text-align: left;
 }
+
+.extra-margins{
+  margin-bottom: 1.25em;
+}
+
 
 .inputs {
   color: #287b97;
@@ -169,12 +174,12 @@ button:hover {
   color: #287b97;
   background-color: transparent;
   border: none;
-  cursor: pointer; /* If it's clickable */
+  cursor: pointer; 
   outline: none;
   transform: none;
 }
 .forgor:hover {
-  text-decoration: underline; /* Adds the underline on hover */
+  text-decoration: underline; 
 }
 
 p {
