@@ -1,0 +1,127 @@
+body,
+html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  font-family: "roboto";
+  background-image: url("./images/background1.jpeg");
+}
+
+.logo {
+    position: absolute;
+    top: 0; /* Adjust to position your logo */
+    left: 0; /* Adjust to position your logo */
+    width: 100px; /* Set your desired width */
+    height: 100px; /* Set your desired height */
+    z-index: 1; /* Make sure it is above other content */
+  }
+
+  .logo-container {
+    position: absolute;
+    top: -5em; /* Adjust to position your logo */
+    left: -8.5em; /* Adjust to position your logo */
+    width: 30em; /* Set your desired width */
+    height: 30em; /* Set your desired height */
+    background-image: url('./images/zo-04.png');
+    background-size: contain; /* Or 'cover' depending on the effect you want */
+    background-repeat: no-repeat;
+    z-index: 0; /* Ensures it's above the background */
+  }
+
+  .flex-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    color: black;
+    background: rgba(255, 255, 255, 0.473);
+    border-radius: 5%;
+    padding: 60px 40px;
+    text-align: center;
+    backdrop-filter: blur(7px);
+    border: 1px solid rgba(255, 255, 255, 0.378);
+    box-shadow: 0 0 30px rgba(8, 7, 16, 0.6);
+    letter-spacing: 0.3px;
+    width: auto;
+    height: auto;
+    max-width: 400px;
+    margin: auto;
+    min-width: 300px;
+    min-height: 350px;
+  }
+
+  .text-inputs {
+    width: 80%;
+    height: 25px;
+    margin-bottom: 10%;
+    border: none;
+    border-bottom: 2px solid #287b97;
+    outline: none;
+    background: transparent;
+    color: black;
+  }
+
+  .text-inputs::placeholder {
+    color: #287b97;
+    font-weight: 500;
+    font-family: "roboto";
+  }
+
+  .inputs {
+    color: #287b97;
+    margin: 0.3125em;
+    background-color: white;
+    border: 2px solid #287b97;
+    outline: none;
+    font-weight: bolder;
+    width: 70%;
+    padding: 10px;
+    border-radius: 10px;
+  }
+  
+  .inputs:hover {
+    cursor: pointer;
+  }
+  
+  button:hover {
+    cursor: pointer;
+  }
+
+  .excluded {
+    text-align: left;
+  }
+
+  .inputs,
+.forgor,
+.text-inputs {
+  width: 80%;
+}
+
+p {
+    
+    color: #287b97;
+  }
+
+  .account-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: 1rem;
+  }
+
+  #login-form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
