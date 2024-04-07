@@ -10,19 +10,24 @@ function forgorPassword($pdo)
 {
     if ($_SERVER["REQUEST_METHOD"] === "POST") {
         try {
-            $email = $_POST["email"];
-            $emailExistsQuery = $pdo->prepare(
-                "SELECT email FROM users WHERE email = :email"
+            $jsonData = file_get_contents('php://input'); 
+            $data = json_decode($jsonData, true); 
+            $_REQUEST = $data; 
+            $email = $_REQUEST['email']; 
+            $username = $_REQUEST['username']; 
+            $userExistsQuery = $pdo->prepare(
+                "SELECT email FROM users WHERE email = :email OR username = :username"
             );
-            $emailExistsQuery->bindParam(":email", $email);
-            $emailExistsQuery->execute();
-            $emailExists = $emailExistsQuery->fetch(PDO::FETCH_ASSOC);
-
-            if ($emailExists) {
-                $mail = new PHPMailer\PHPMailer\PHPMailer(true); // Passing `true` enables exceptions
+            $userExistsQuery->bindParam(":email", $email);
+            $userExistsQuery->bindParam(":username", $username);
+            $userExistsQuery->execute();
+            $userExists = $userExistsQuery->fetch(PDO::FETCH_ASSOC);
+            if ($userExists) {
+                $email = $userExists['email'];
+                $mail = new PHPMailer\PHPMailer\PHPMailer(true); 
                 $mail->isSMTP();
                 $mail->Host = 'smtp.office365.com';
-                $mail->SMTPAuth = true;
+                $mail->SMTPAuth = true; 
                 $mail->Username = $_ENV["EMAIL"];
                 $mail->Password = $_ENV["EMAIL_PASSWORD"];
                 $mail->SMTPSecure = PHPMailer\PHPMailer\PHPMailer::ENCRYPTION_STARTTLS;

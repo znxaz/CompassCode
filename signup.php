@@ -7,13 +7,16 @@ function signupHandler($pdo)
 {
     try {
         if ($_SERVER["REQUEST_METHOD"] === "POST") {
-            $username = $_POST["username"] ?? null;
-            $email = $_POST["email"] ?? null;
-            $password = $_POST["password"] ?? null;
+            $jsonData = file_get_contents('php://input'); 
+            $data = json_decode($jsonData,true);
+            $_REQUEST = $data; 
+            $username = $_REQUEST["username"] ?? null;
+            $email = $_REQUEST["email"] ?? null;
+            $password = $_REQUEST["password"] ?? null;
 
             if (empty($username) || empty($password) || empty($email)) {
                 echo "Please fill out the required fields.";
-                return; // Stop the function if the fields are empty
+                return; 
             }
 
             $checkUsernameQuery = $pdo->prepare(
@@ -25,7 +28,7 @@ function signupHandler($pdo)
 
             if ($userExists) {
                 echo "Username already exists, please try another one.";
-                return; // Stop the function if the user exists
+                return; 
             }
 
             $hashedPassword = password_hash($password, PASSWORD_DEFAULT);

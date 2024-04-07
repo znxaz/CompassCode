@@ -128,7 +128,8 @@ button:hover {
   color: #287b97;
 }
 
-.left-label-text {
+.label-text{
+  padding-left: 1.75em;
   text-align: left;
   color: #287b97;
 }

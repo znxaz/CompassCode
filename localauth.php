@@ -3,8 +3,11 @@ require __DIR__ . '/db.php';
 
 function loginHandler($pdo){
     if($_SERVER["REQUEST_METHOD"] === "POST"){
-        $username = $_POST["username"] ?? null; 
-        $password = $_POST["password"] ?? null;
+        $jsonData = file_get_contents('php://input'); 
+        $data = json_decode($jsonData, true); 
+        $_REQUEST = $data;
+        $username = $_REQUEST['username'];
+        $password = $_REQUEST['password'];
 
         try{
             $checkUsernameQuery = $pdo->prepare(
