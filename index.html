@@ -4,7 +4,8 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Roadmap Log in</title>
-    <link rel="icon" type="image/x-icon" href="./images/">
+    <link rel="icon" type="image/x-icon" href="./images/" />
+    <link rel="stylesheet" href="common.css" />
     <link rel="stylesheet" href="styles.css" />
     <script src="index.js" defer></script>
 
@@ -17,29 +18,27 @@
   </head>
   <body>
     <div id="app">
-      
       <div class="logo-container">
-      <img class=""logo src="./images/zo-04.png" />
-    </div>
+        <img class="" logo src="./images/zo-04.png" />
+      </div>
 
       <div class="flex-container">
         <div class="container">
           <form action="" id="login-form">
-            <div class="input-wrapper">
-              <label for="username">
-                <p class="excluded extra-margins">Username</p>
+            <label for="username">
+              <p class="left-label-text">Username</p>
               <input
                 type="text"
                 class="text-inputs"
                 name="user-name"
                 id="un1"
-                placeholder="Username"
+                placeholder="John Smith"
                 required
               />
               <br />
             </label>
 
-            <p class="excluded extra-margins" >Password</p>
+            <p class="left-label-text">Password</p>
             <label for="password">
               <input
                 type="password"
@@ -48,22 +47,27 @@
                 id="ps1"
                 placeholder="Password"
                 required
-              />      
+              />
               <label for="iForgor">
-                <button class="forgor">Forgot Password?</button>
+                <button class="forgor" onclick="location.href='forgor.html'">
+                  Forgot Password?
+                </button>
               </label>
-            </div>
-              <br />
+
             </label>
             <label for="submition">
               <input type="submit" class="inputs top-login" value="Log In" />
             </label>
             <div class="account-section">
-              <p>don't have an account?</p>
-              <button class="inputs" type="button" onclick="location.href='signup.html'">Sign Up</button>
+              <p class="noAccount">don't have an account?</p>
+              <button
+                class="inputs"
+                type="button"
+                onclick="location.href='signup.html'"
+              >
+                Sign Up
+              </button>
             </div>
-            
-            <br />
           </form>
         </div>
       </div>

@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up</title>
     <link rel="stylesheet" href="signup.css">
+    <link rel="stylesheet" href="common.css">
     <link
     href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
     rel="stylesheet"
@@ -14,14 +15,14 @@
     <div class="logo-container">
         <img class=""logo src="./images/zo-04.png" />
       </div>
-
-
+      
       <div class="flex-container">
         <div class="container">
+          <button class="back-button" onclick=" location.href='index.html'">&#x25c0;</button>
           <form action="" id="login-form">
             <div class="input-wrapper">
             <label for="username">
-                <p class="excluded">Username</p>
+                <p class="left-label-text">Username</p>
               <input
                 type="text"
                 class="text-inputs"
@@ -33,7 +34,7 @@
               <br />
             </label>
             <label for="email">
-              <p class="excluded">Email</p>
+              <p class="left-label-text">Email</p>
             <input
               type="email"
               class="text-inputs"
@@ -42,7 +43,7 @@
               placeholder="eg: dietmilk@gmail.com"
               required
             />
-            <p class="excluded" >Password</p>
+            <p class="left-label-text" >Password</p>
             <label for="password">
               <input
                 type="password"
@@ -52,7 +53,7 @@
                 placeholder="Password"
                 required
               />        
-              <p class="excluded" >Confirm Password</p>
+              <p class="left-label-text" >Confirm Password</p>
               <label for="password">
                 <input
                   type="password"
