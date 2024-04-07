@@ -1,10 +1,3 @@
-
-.inputs,
-.forgor,
-.text-inputs {
-  width: 80%;
-}
-
 .forgor {
   position: absolute;
   margin-top: 2em;
@@ -17,11 +10,8 @@
   cursor: pointer;
   outline: none;
   transform: none;
+  width: 80%;
 }
 .forgor:hover {
   text-decoration: underline;
 }
-
-.noAccount {
-  color: #287b97;
-} 

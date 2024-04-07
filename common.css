@@ -67,11 +67,6 @@ html {
   min-height: 350px;
 }
 
-.inputs,
-.text-inputs {
-  width: 80%;
-}
-
 .text-inputs {
   width: 80%;
   height: 25px;
@@ -81,6 +76,7 @@ html {
   outline: none;
   background: transparent;
   color: black;
+
 }
 
 .text-inputs::placeholder {
@@ -96,7 +92,7 @@ html {
   border: 2px solid #287b97;
   outline: none;
   font-weight: bolder;
-  width: 70%;
+  width: 80%;
   padding: 10px;
   border-radius: 10px;
 }
@@ -134,5 +130,9 @@ button:hover {
 
 .left-label-text {
   text-align: left;
+  color: #287b97;
+}
+
+p{
   color: #287b97;
 }
