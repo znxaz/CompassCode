@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>TestingSVG</title>
-    <script src="script.js" defer></script>
+    <script src="test.js" defer></script>
 </head>
 <body>
         <svg width="100%" height="1000px">
@@ -23,20 +23,23 @@
             <!-- Line 4 From C2R1 To C4R2 -->
             <line x1="70%" y1="10%" x2="70%" id="l4" y2="25%" stroke="black" stroke-width="2px" stroke-dasharray="5 3" style="display: none;"></line>
 
-            <!-- Line from C1R2 to C1R3 -->
-            <line x1="25%" y1="25%" x2="30%" y2="35%" stroke="black" stroke-dasharray="5 3"></line>
-
-            <!-- Line From C2R2 to C1R3 -->
-            <line x1="35%" y1="25%" x2="30%" y2="35%" stroke="black" stroke-dasharray="5 3"></line>
-
+        
             <!-- Line 5 from C1R3 To Html -->
-            <line x1="30%" y1="35%" x2="50%" y2="50%" stroke="black" stroke-dasharray="5 3"></line>
+            <line x1="30%" y1="35%" x2="50%" id="l5" y2="50%" stroke="black" stroke-dasharray="5 3" style="display: none;"></line>
 
             <!-- Line 6 from OOP to HTML -->
-            <line x1="50%" y1="25%" x2="50%" y2="50%" stroke="black" stroke-dasharray="5 3"></line>
+            <line x1="50%" y1="25%" x2="50%" id="l6" y2="50%" stroke="black" stroke-dasharray="5 3" style="display: none;"></line>
 
             <!-- Line 7 From C4R2 to HTML -->
-            <line x1="70%" y1="25%" x2="50%" y2="50%" stroke="black" stroke-dasharray="5 3"></line>
+            <line x1="70%" y1="25%" x2="50%" id="l7" y2="50%" stroke="black" stroke-dasharray="5 3" style="display: none;"></line>
+
+            <!-- Line 8 from C1R2 to C1R3 -->
+            <line x1="25%" y1="25%" x2="30%" id="l8" y2="35%" stroke="black" stroke-dasharray="5 3" style="display: none;"></line>
+            
+            <!-- Line 9 From C2R2 to C1R3 -->
+            <line x1="35%" y1="25%" x2="30%" id="l9" y2="35%" stroke="black" stroke-dasharray="5 3" style="display: none;"></line>
+
+
           
 
 
@@ -44,19 +47,19 @@
             
 
             <!-- Circle 1  first row-->
-            <circle cx="30%" cy="10%" r="50" fill="lightgrey"  stroke="black" stroke-width="2px"></circle>
+            <circle cx="30%" cy="10%" r="50" id="c1r1" style="fill:lightgrey; stroke:black; stroke-width: 2px;"></circle>
             <!-- Link 1 first row (C++)-->
-            <text x="30%" y="10%" text-anchor="middle"><a href="https://www.w3schools.com/cpp/" id="c1r1" target="_blank">C++</a></text>
+            <text x="30%" y="10%" text-anchor="middle"><a href="https://www.w3schools.com/cpp/"  target="_blank">C++</a></text>
 
             <!-- Circle 2 first row-->
-            <circle cx="50%" cy="10%" r="50" fill="lightgrey"  stroke="black" stroke-width="2px"></circle>
+            <circle cx="50%" cy="10%" r="50" fill="lightgrey" id="c2r1"  stroke="black" stroke-width="2px"></circle>
             <!-- Link 2 first row (java) -->
-            <text x="50%" y="10%" text-anchor="middle"><a href="https://www.w3schools.com/cpp/" id="c2r1" target="_blank">Java</a></text>
+            <text x="50%" y="10%" text-anchor="middle"><a href="https://www.w3schools.com/cpp/"  target="_blank">Java</a></text>
 
             <!-- Circle 3 First Row -->
-            <circle cx="70%" cy="10%" r="50" fill="lightgrey"  stroke="black" stroke-width="2px"></circle>
+            <circle cx="70%" cy="10%" r="50" fill="lightgrey" id="c3r1"   stroke="black" stroke-width="2px"></circle>
             <!-- Link 3 first row (Python)-->
-            <text x="70%" y="10%" text-anchor="middle"><a href="https://www.w3schools.com/cpp/" id="c3r1" target="_blank">Python</a></text>
+            <text x="70%" y="10%" text-anchor="middle"><a href="https://www.w3schools.com/cpp/" target="_blank">Python</a></text>
 
             
 
@@ -90,12 +93,13 @@
            
 
             <!-- Circle 1 Row 3 -->
-            <circle cx="30%" cy="35%" r="50" fill="salmon" stroke="black"></circle>
-            <text x="30%" y="35%" text-anchor="middle">idk bruh</text>
+            <circle cx="30%" cy="35%" r="50" fill="grey" id="c1r3" stroke="black" stroke-width="2px" style="display: none;"></circle>
+            <text x="30%" y="35%" text-anchor="middle" id="c1r3t"  style="display: none;">idk bruh</text>
 
 
             <!-- HTML Skills -->
-            <circle cx="50%" cy="50%" r="50" fill="lightgreen" stroke="black"></circle>
+            <circle cx="50%" cy="50%" id="htmlC" r="50" style="fill:salmon; stroke:black; stroke-width:2px; display:none"></circle>
+            <text x="50%" y="50%" id="htmlT" text-anchor="middle" style="display: none;">HTML</text>
         
         </svg>
 </body>

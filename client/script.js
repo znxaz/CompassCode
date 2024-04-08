@@ -39,20 +39,7 @@ c1r1.addEventListener('mouseout', ()=>{
     line2.style.display='none';
 });
 
-c1r1.addEventListener('click', ()=>{
 
-    c1r2.style.display='block';
-    
-    t1r2.style.display='block' ;
-    
-    c2r2.style.display='block';
-    
-    t2r2.style.display='block' ;
-    
-    line1.style.display='block';
-    
-    line2.style.display='block';
-    });
 
 //Second Circle and its hidden elements
 
