@@ -42,13 +42,16 @@ const c1r1=document.getElementById('c1r1');
 
         line9.style.display='block';
 
-        line5.style.display='block';
+        
 
         circle1Color='green';
 
         if(circle1Color==='green' && circle2Color==='green' && circle3Color==='green'){
             htmlCircle.style.display='block';
             htmlText.style.display='block';
+            line5.style.display='block';
+            line6.style.display='block';
+            line7.style.display='block';
     }
     })
 
@@ -72,13 +75,16 @@ const c1r1=document.getElementById('c1r1');
 
         c2r1.style.fill='lightgreen';
 
-        line6.style.display='block';
+        
         
         circle2Color='green';
 
         if(circle1Color==='green' && circle2Color==='green' && circle3Color==='green'){
             htmlCircle.style.display='block';
             htmlText.style.display='block';
+            line5.style.display='block';
+            line6.style.display='block';
+            line7.style.display='block';
     }
     })
 
@@ -99,13 +105,16 @@ const c1r1=document.getElementById('c1r1');
                 t4r2.style.display='block';
                 line4.style.display='block';
                 c3r1.style.fill='lightgreen';
-                line7.style.display='block';
+                
 
                 circle3Color='green';
 
                 if(circle1Color==='green' && circle2Color==='green' && circle3Color==='green'){
                     htmlCircle.style.display='block';
                     htmlText.style.display='block';
+                    line5.style.display='block';
+                    line6.style.display='block';
+                    line7.style.display='block';
             }
             });
 
