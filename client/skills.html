@@ -4,72 +4,91 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SkillTree</title>
+    <title>Skills</title>
     <link rel="stylesheet" href="skill.css">
+
     <script src="script.js" defer></script>
-    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
 </head>
 
 <body>
-
-    <div class="tree">
-        <table>
-            <tr>
-                <td>
-                    <span class="circles">
-                        <a href="https://www.w3schools.com/cpp/" id="cParent" class="inside hover-link"
-                            target="_blank">C++ </a>
-                    </span>
-                </td>
-
-                <td>
-                    <span class="circles">
-                        <a href="" class="inside hover-link">Java</a>
-                    </span>
-                </td>
-                <td>
-                    <span class="circles">
-                        <a href="" class="inside hover-link">Python</a>
-                    </span>
-                </td>
-            </tr>
+    <svg width="100%" height="1000px">
+        <!-- Cuztomizable Gradient Colors -->
+        <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" stop-color="#257a99" />
+            <stop offset="100%" stop-color="lightblue" />
+        </linearGradient>
 
 
-            <tr>
-                <td >
-                    <div class="hidden" id="cBaby">
-                        <div class="lines-dashed leftD">
-                        </div>
+        <!-- Lines -->
 
-                        <div class="lines-solid rightD">
-                        </div>
-                    </div>
-                </td>
+        <!-- Line C++ To HTML -->
+        <line x1="30%" y1="10%" x2="50%" y2="40%"
+            style="stroke:#257a99; stroke-width: 6px; display:none" id="l1"></line>
 
-                <td >
-                    <div class="hidden">
-                        <div class="lines-dashed leftD"></div>
-                        <div class="lines-dashed rightD"></div>
-                    </div>
 
-                </td>
+        <!-- Line Java to HTML -->
+        <line x1="50%" y1="10%" x2="50%" y2="40%"
+            style="stroke:#257a99; stroke-width: 6px;  display:none" id="l2"></line>
 
-                <td>
-                    <div class="hidden">
-                        <div class="lines-dashed straightD"></div>
-                    </div>
-                </td>
-            </tr>
 
-           <tr>
-            <td>
-                <div class="line"></div>
-            </td>
-           </tr>
-        </table>
+        <!-- Line Python to HTML -->
+        <line x1="70%" y1="10%" x2="50%" y2="40%"
+            style="stroke:#257a99; stroke-width: 6px;  display:none" id="l3"></line>
 
-    </div>
-    
+
+        <!-- Line from HTML to CSS -->
+        <line x1="50%" y1="40%" x2="50%" y2="60%"
+            style="stroke:black; stroke-width: 2px; stroke-dasharray:5 3; display:none" id="l4"></line>
+
+
+            <!-- Test -->
+            <path M></path>
+
+        <!-- CIRCLES -->
+
+        <!-- Circle C++ and Text -->
+        <circle cx="30%" cy="10%" r="60" id="c" style="fill:lightgrey; stroke:black; stroke-width:4px;"></circle>
+        <text x="30%" y="10%" text-anchor="middle" id="cText">C++</text>
+
+
+        <!-- Circle Java and Text -->
+        <circle cx="50%" cy="10%" r="60" id="java" style="fill:lightgrey; stroke:black; stroke-width:4px;"></circle>
+        <text x="50%" y="10%" text-anchor="middle" id="javaText">Java</text>
+
+        <!-- Circle Python and Text -->
+        <circle cx="70%" cy="10%" r="60" id="python" style="fill:lightgrey; stroke:black; stroke-width:4px;"></circle>
+        <text x="70%" y="10%" text-anchor="middle" id="pythonText">Python</text>
+
+
+        <!-- Circle HTML and Text -->
+        <circle cx="50%" cy="40%" r="50" id="html"
+            style="fill:salmon; stroke:black; stroke-width:2px; stroke-dasharray:5 3; display: none;"></circle>
+        <text x="50%" y="40%" text-anchor="middle" id="htmlText" style="display: none;">HTML</text>
+
+
+
+        <!-- Circle CSS and Text -->
+        <circle cx="50%" cy="60%" r="50" id="styling"
+            style="fill:salmon; stroke:black; stroke-width:2px; stroke-dasharray:5 3; display: none;"></circle>
+        <text x="50%" y="60%" text-anchor="middle" id="styleText" style="display: none;">CSS</text>
+
+
+
+
+
+
+
+
+
+    </svg>
+
+
+
 </body>
 
 </html>
