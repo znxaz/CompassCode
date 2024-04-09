@@ -1,8 +1,5 @@
 .forgor {
   position: absolute;
-  margin-top: 2em;
-  padding: 0.6rem 1rem;
-  right: 0;
   left: 6rem;
   color: #287b97;
   background-color: transparent;
@@ -11,7 +8,14 @@
   outline: none;
   transform: none;
   width: 80%;
+  margin-top: 11em;
+  margin-left: 1.5em;
 }
 .forgor:hover {
   text-decoration: underline;
+}
+
+.noAccount{
+  margin-top: 3em;
+  color:#287b97;
 }

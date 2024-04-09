@@ -4,11 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Roadmap Log in</title>
-    <link rel="icon" type="image/x-icon" href="./images/" />
-    <link rel="stylesheet" href="common.css" />
+    <link rel="icon" type="image/x-icon" href="./images/favicon.ico" />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="common.css" />
     <script src="index.js" defer></script>
-
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -19,44 +18,41 @@
   <body>
     <div id="app">
       <div class="logo-container">
-        <img class="" logo src="./images/zo-04.png" />
+        <img class="logo" src="./images/zo-04.png" alt="logo" />
       </div>
 
       <div class="flex-container">
         <div class="container">
-          <form action="" id="login-form">
-            <label for="username">
-              <p class="label-text">Username</p>
+          <form action="localauth.php" id="login-form">
+              <label for="un1" class="label-text">Username</label>
               <input
                 type="text"
                 class="text-inputs"
-                name="user-name"
                 id="un1"
                 placeholder="John-Smith"
                 required
               />
-            </label>
 
-            <p class="label-text">Password</p>
-            <label for="password">
+              <label for="ps1" class="label-text">Password</label>
               <input
                 type="password"
                 class="text-inputs"
-                name="pass-word"
                 id="ps1"
                 placeholder="********"
                 required
               />
-              <label for="iForgor">
-                <button class="forgor" onclick="location.href='forgor.html'">
-                  Forgot Password?
-                </button>
-              </label>
-            </label>
-            <label for="submition">
-              <input type="submit" class="inputs top-login" value="Log In" />
-            </label>
-            <div class="account-section">
+
+            <button
+              class="forgor"
+              type="button"
+              onclick="location.href='forgor.html'"
+            >
+              Forgot Password?
+            </button>
+
+
+            <div class="submission">
+              <input type="submit" class="inputs" value="Log In" />
               <p class="noAccount">don't have an account?</p>
               <button
                 class="inputs"

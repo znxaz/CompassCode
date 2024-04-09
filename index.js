@@ -10,28 +10,33 @@ function signup() {
     };
 
     const requestOptions = {
-      method: 'POST', 
+      method: "POST",
       headers: {
-        'Content-Type': 'application/json',
-      }, 
-      body: JSON.stringify(data)
-    }; 
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(data),
+    };
     fetch(apiUrl, requestOptions)
-    .then(response => {
-      if(!response.ok){
-        throw new Error('Network response was not ok');
-      }
-      return response.json(); 
-    })
-    .then(data => {
-      outputElement.textContent = JSON.stringify(data, null, 2);
-    })
-    .catch(error => {
-      console.error('Error: ', error)
-    })
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        return response.json();
+      })
+      .then((response) => {
+        if (response.ok) {
+          window.location.href = "/skills";
+        } else {
+          throw new Error("Network response was not okay");
+        }
+      })
+      .catch((error) => {
+        console.error("Error: ", error);
+      });
+  } else {
+    console.log("passwords do no match");
   }
 }
-
 
 document
   .getElementById("login-form")

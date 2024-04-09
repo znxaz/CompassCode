@@ -48,7 +48,7 @@ html {
 .container {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   color: black;
   background: rgba(255, 255, 255, 0.473);
@@ -68,7 +68,7 @@ html {
 }
 
 .text-inputs {
-  width: 80%;
+  width: 85%;
   height: 25px;
   margin-bottom: 10%;
   border: none;
@@ -76,7 +76,7 @@ html {
   outline: none;
   background: transparent;
   color: black;
-
+  margin-left: 1.5em;
 }
 
 .text-inputs::placeholder {
@@ -84,10 +84,8 @@ html {
   font-weight: 500;
   font-family: "Roboto";
 }
-
 .inputs {
   color: #287b97;
-  margin: 0.3125em;
   background-color: white;
   border: 2px solid #287b97;
   outline: none;
@@ -108,11 +106,11 @@ button:hover {
   width: 100%;
 }
 
-.account-section {
+.submission{
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   width: 100%;
   margin-top: 1rem;
 }
@@ -129,11 +127,11 @@ button:hover {
 }
 
 .label-text{
-  padding-left: 1.75em;
-  text-align: left;
   color: #287b97;
+  margin-left: 1em;
+  margin-bottom: 0.5em;
 }
 
-p{
-  color: #287b97;
+label{
+  text-align: left;
 }
