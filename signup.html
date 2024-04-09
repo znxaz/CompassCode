@@ -1,75 +1,56 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sign Up</title>
-    <link rel="stylesheet" href="common.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
-      rel="stylesheet"
-    />
-    <script src="index.js" defer></script>
-  </head>
-  <body>
-    <div id="app">
-      <
-      <div class="logo-container">
-        <img class="logo" src="./images/zo-04.png" alt="Company Logo" />
+<div class="logo-container">
+  <img class="logo" src="./images/zo-04.png" alt="Company Logo" />
+</div>
+
+<div class="flex-container">
+  <div class="container">
+    <button
+      class="back-button"
+      type="button"
+      onclick="location.hash='#'"
+    >
+      &#x25c0;
+    </button>
+    <form id="login-form">
+      <label for="un1" class="label-text"> Username</label>
+      <input
+        type="text"
+        class="text-inputs"
+        id="un1"
+        placeholder="john-smith"
+        required
+      />
+
+      <label for="em1" class="label-text"> Email</label>
+      <input
+        type="email"
+        class="text-inputs"
+        id="em1"
+        placeholder="eg: dietmilk@gmail.com"
+        required
+      />
+
+      <label for="ps1" class="label-text"> Password</label>
+      <input
+        type="password"
+        class="text-inputs"
+        id="ps1"
+        placeholder="********"
+        required
+      />
+
+      <label for="ps2" class="label-text">Confirm Password</label>
+      <input
+        type="password"
+        class="text-inputs extra-margins"
+        id="ps2"
+        placeholder="********"
+        required
+      />
+
+      <div class="submission">
+        <button class="inputs" type="submit">Sign Up</button>
       </div>
-
-      <div class="flex-container">
-        <div class="container">
-          <button
-            class="back-button"
-            type="button"
-            onclick="location.href='index.html'"
-          >
-            &#x25c0;
-          </button>
-          <form id="login-form">
-            <label for="un1" class="label-text"> Username</label>
-            <input
-              type="text"
-              class="text-inputs"
-              id="un1"
-              placeholder="john-smith"
-              required
-            />
-
-            <label for="em1" class="label-text"> Email</label>
-            <input
-              type="email"
-              class="text-inputs"
-              id="em1"
-              placeholder="eg: dietmilk@gmail.com"
-              required
-            />
-
-            <label for="ps1" class="label-text"> Password</label>
-            <input
-              type="password"
-              class="text-inputs"
-              id="ps1"
-              placeholder="********"
-              required
-            />
-
-            <label for="ps2" class="label-text">Confirm Password</label>
-            <input
-              type="password"
-              class="text-inputs extra-margins"
-              id="ps2"
-              placeholder="********"
-              required
-            />
-
-            <div class="submission">
-              <button class="inputs" type="submit">Sign Up</button>
-            </div>
-          </form>
-        </div>
-      </div>
-    </div>
-  </body>
-</html>
+    </form>
+  </div>
+</div>

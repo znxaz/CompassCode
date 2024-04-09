@@ -4,7 +4,7 @@ require __DIR__ . '/db.php';
 
 
 $routes = [
-    '/signup' => function() use ($pdo) {
+    '/createUser' => function() use ($pdo) {
         require __DIR__ . '/signup.php';
         signupHandler($pdo); 
     },
@@ -12,8 +12,8 @@ $routes = [
         require __DIR__ . '/localauth.php';
         loginHandler($pdo);
     },
-    '/forgor' => function() use ($pdo) {
-        require __DIR__ . '/forgor.php';
+    '/forgotPassword' => function() use ($pdo) {
+        require __DIR__ . '/forgot.php';
         forgorPassword($pdo);
     }
 ];
