@@ -1,9 +1,10 @@
 h1 {
-  margin-bottom: 1em;
   color: #287b97;
   font-size: x-large;
+  margin-bottom: 2em;
 }
 
 .container{
-  min-height: 15.625em;
+  min-height:15em;
+  height: 15em;
 }
