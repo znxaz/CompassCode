@@ -1,5 +1,7 @@
 import { login, signup, forgotPassword } from './api.js';
-// Fetches HTML content and updates the page
+
+const currentCSS = new Set();  // Keeps track of currently injected CSS files
+
 async function fetchHTML(url) {
   try {
     const response = await fetch(url);
@@ -9,7 +11,7 @@ async function fetchHTML(url) {
     return await response.text();
   } catch (error) {
     console.error("Error fetching the HTML:", error);
-    return "<p>Requested page not found.</p>"; // Return error HTML
+    return "<p>Requested page not found.</p>";
   }
 }
 
@@ -21,23 +23,20 @@ async function loadContent(path, callback) {
   }
 }
 
-// SPA router
 function router() {
   const routes = {
-    "/": "index.html",       // Main page, typically for login
-    "forgot": "forgot.html", // Forgot password page
-    "signup": "signup.html", // Signup page
-    "skills": "skills.html", // A skills demonstration page
+    "/": "index.html",
+    "forgot": "forgot.html",
+    "signup": "signup.html",
+    "skills": "skills.html"
   };
 
-  let path = window.location.hash.substring(1) || "/";
-  let contentURL = routes[path];
+  const path = window.location.hash.substring(1) || "/";
+  const contentURL = routes[path];
 
   if (contentURL) {
-    loadContent(contentURL, function() {
-      setupForm(path); // Setup form after the content is loaded
-
-      // Handle CSS injections or removals based on the current page
+    loadContent(contentURL, () => {
+      setupForm(path);
       handleCSS(path);
     });
   } else {
@@ -46,49 +45,63 @@ function router() {
 }
 
 function setupForm(path) {
-  // Identify and setup the form based on the current path
-  if (path === "signup") {
-    const form = document.getElementById("signup-form");
-    if (form) form.onsubmit = function(event) {
+  // Simplified for clarity
+  const formId = {
+    "/": "login-form",
+    "signup": "signup-form",
+    "forgot": "forgot-form"
+  }[path] || "login-form";  // Default to login-form if path is '/'
+
+  const form = document.getElementById(formId);
+  if (form) {
+    form.onsubmit = function(event) {
       event.preventDefault();
-      signup();
-    };
-  } else if (path === "forgot") {
-    const form = document.getElementById("forgot-form");
-    if (form) form.onsubmit = function(event) {
-      event.preventDefault();
-      forgotPassword();
-    };
-  } else if (path === "/" || path === "login") { 
-    const form = document.getElementById("login-form");
-    if (form) form.onsubmit = function(event) {
-      event.preventDefault();
-      login();
+      const action = { "/": login, "signup": signup, "forgot": forgotPassword }[path];
+      action();
     };
   }
 }
 
 function handleCSS(path) {
-  if (path === "forgot") {
-    injectCSS("forgot.css", "forgotcss");
-  } else {
-    removeCSS("forgotcss");
-  }
+  const requiredCSS = {
+    "/": ["common.css", "styles.css"],
+    "forgot": ["forgot.css", "common.css", "styles.css"],
+    "signup": ["common.css", "styles.css"],
+    "skills": ["skills.css"]
+  };
+
+  // Remove all CSS not needed for the current path
+  Array.from(currentCSS).forEach(css => {
+    if (!requiredCSS[path].includes(css)) {
+      removeCSS(css);
+      currentCSS.delete(css);
+    }
+  });
+
+  // Add required CSS for the current path
+  requiredCSS[path].forEach(css => {
+    if (!currentCSS.has(css)) {
+      injectCSS(css);
+      currentCSS.add(css);
+    }
+  });
 }
 
-function injectCSS(filename, id) {
+function injectCSS(file) {
+  const id = file.replace('.css', '') + '-style';
   let link = document.getElementById(id);
   if (!link) {
     link = document.createElement("link");
     link.id = id;
     link.rel = "stylesheet";
     link.type = "text/css";
+    link.href = file;
     document.head.appendChild(link);
   }
-  link.href = filename;
 }
 
-function removeCSS(id) {
+function removeCSS(file) {
+  const id = file.replace('.css', '') + '-style';
   const link = document.getElementById(id);
   if (link) {
     link.parentNode.removeChild(link);

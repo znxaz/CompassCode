@@ -1,0 +1,149 @@
+* {
+  font-family: "Roboto";
+  color: white;
+}
+
+.navbar {
+  top: 1;
+  left: 1;
+  margin: 0.75em;
+  height: 2em;
+  background-color: #e0eaf3;
+  border: 1px solid #287b97;
+  width: 2.5em;
+  padding-left: 0.5em;
+  padding-right: 0.25em;
+  padding-top: 0.25em;
+  padding-bottom: 0.25em;
+  height: 2.5em;
+  border-radius: 4px;
+}
+
+.seperator {
+  width: 100%;
+}
+.menuLine {
+  width: 35px;
+  height: 5px;
+  background-color: #287b97;
+  margin: 6px 0;
+}
+
+img {
+  border: none;
+  border-radius: 10px;
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+body {
+  background-color: #e0eaf3;
+  margin: 0px;
+  padding: 0px;
+}
+
+.skills-body {
+  display: flex;
+  justify-content: space-around;
+  max-width: 100%;
+  flex-wrap: wrap;
+}
+
+.card-container {
+  display: inline-block;
+  border: 3px solid #287b97;
+  margin: 2em 1em;
+  border-radius: 20px;
+}
+.card {
+  border-radius: 20px;
+  background-color: white;
+  width: 15em;
+  height: 15em;
+}
+
+.cardImage {
+  display: flex;
+  width: 100%;
+  height: 75%;
+  padding: 1em;
+  align-content: center;
+  object-fit: contain;
+  object-position: center center;
+  position: static;
+  background-color: #e0eaf3;
+  border-radius: 20px;
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+
+.cardDetails {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  height: 3.75em;
+  background-color: #287b97d2;
+  max-width: 15.1em;
+  max-height: 5em;
+  border-radius: 1.1em;
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  justify-content: space-between;
+  border: none;
+}
+
+.cardButtons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 5.5em;
+}
+
+.cardImage,
+.cardDetails,
+.cardButtons {
+  margin: 0;
+  padding: 0;
+}
+
+.goTo {
+  width: 7em;
+  margin-top: 0.3em;
+  margin-bottom: 0.2em;
+  margin-left: 0.75em;
+}
+
+.statusSelect {
+  margin-top: 0.3em;
+  margin-bottom: 0.2em;
+  margin-right: 1em;
+  margin-left: 0.5em;
+  padding-left: 1em;
+}
+
+.goTo,
+.statusSelect {
+  color: #287b97;
+  background-color: white;
+  border: 2px solid #287b97;
+  outline: none;
+  font-weight: bolder;
+  border-radius: 10px;
+}
+
+.active {
+  color: green;
+}
+
+.hold {
+  color: red;
+}
+
+.cardText {
+  align-self: center;
+  margin-top: 0.25em;
+  margin-bottom: 0px;
+}
