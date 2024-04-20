@@ -15,7 +15,7 @@ function signupHandler($pdo)
             $password = $_REQUEST["password"] ?? null;
 
             if (empty($username) || empty($password) || empty($email)) {
-                echo "Please fill out the required fields.";
+                echo json_encode("Please fill out the required fields.") ;
                 return; 
             }
 
@@ -27,7 +27,7 @@ function signupHandler($pdo)
             $userExists = $checkUsernameQuery->fetch(PDO::FETCH_ASSOC);
 
             if ($userExists) {
-                echo "Username already exists, please try another one.";
+                echo json_encode("Username already exists, please try another one.");
                 return; 
             }
 
@@ -38,12 +38,15 @@ function signupHandler($pdo)
                 "INSERT INTO users (uuid, username, email, password) VALUES (?, ?, ?, ?)"
             );
             $insertUser->execute([$uuid, $username, $email, $hashedPassword]);
-            echo "User successfully registered.";
+            echo json_encode([
+                'success' => true,
+                'message' => 'Successfully logged in.',
+            ]);
 
         } else {
-            echo "Only POST requests are handled here.";
+            echo json_encode("Only POST requests are handled here.");
         }
     } catch (PDOException $err) {
-        echo "An error occurred: " . $err->getMessage();
+        echo json_encode("An error occurred: " . $err->getMessage());
     }
 }

@@ -100,7 +100,9 @@ button:hover {
   cursor: pointer;
 }
 
-#login-form {
+#login-form,
+#signup-form,
+#forgot-form{
   display: flex;
   flex-direction: column;
   width: 100%;
