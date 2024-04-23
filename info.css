@@ -1,11 +1,50 @@
-*{
-    font-family: "Roboto";
+* {
+  font-family: "Roboto";
+  color: #287b97;
 }
 
-h1,h2,h3{
-    text-align: left;
-    margin: 1em;
+body {
+  background-color: #e0eaf3;
 }
 
 
+.logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  z-index: 1;
+}
+.logo-container {
+  position: absolute;
+  top: -5em;
+  left: -8.5em;
+  width: 30em;
+  height: 30em;
+  background-image: url("./images/zo-04.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 0;
+}
 
+h1,
+h2,
+h3 {
+  text-align: left;
+  margin: 1em;
+}
+
+.title {
+  text-align: center;
+}
+
+.techLogo {
+  border: none;
+  border-radius: 10px;
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 5em;
+  max-height: 5em;
+}
