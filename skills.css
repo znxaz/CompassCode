@@ -3,6 +3,15 @@
   color: white;
 }
 
+.logo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100px;
+  height: 100px;
+  z-index: 1;
+}
+
 .navbar {
   top: 1;
   left: 1;
@@ -134,11 +143,15 @@ body {
   border-radius: 10px;
 }
 
-.active {
+.goTo:hover{
+  cursor: pointer;
+}
+
+.active, .complete {
   color: green;
 }
 
-.hold {
+.hold, .skipped {
   color: red;
 }
 

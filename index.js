@@ -1,12 +1,15 @@
-import { login, signup, forgotPassword } from './api.js';
+import { login, signup, forgotPassword } from "./api.js";
+import { populateInfo } from "./info.js";
 
-const currentCSS = new Set();  // Keeps track of currently injected CSS files
+const currentCSS = new Set(); // Keeps track of currently injected CSS files
 
 async function fetchHTML(url) {
   try {
     const response = await fetch(url);
     if (!response.ok) {
-      throw new Error(`Resource not found at ${url}, status: ${response.status}`);
+      throw new Error(
+        `Resource not found at ${url}, status: ${response.status}`
+      );
     }
     return await response.text();
   } catch (error) {
@@ -26,37 +29,51 @@ async function loadContent(path, callback) {
 function router() {
   const routes = {
     "/": "index.html",
-    "forgot": "forgot.html",
-    "signup": "signup.html",
-    "skills": "skills.html"
+    forgot: "forgot.html",
+    signup: "signup.html",
+    skills: "skills.html",
+    info: "info.html",
   };
 
-  const path = window.location.hash.substring(1) || "/";
-  const contentURL = routes[path];
+  const hash = window.location.hash.substring(1);
+  var basePath = hash.split("/")[0] || "/" ;
+  var subPath = hash.split("/")[1];
+  const contentURL =
+    routes[basePath] ||
+    (basePath.startsWith("info") ? "skills.html" : undefined);
 
   if (contentURL) {
     loadContent(contentURL, () => {
-      setupForm(path);
-      handleCSS(path);
+      if (basePath === "info" && subPath) {
+        populateInfo(subPath);
+        handleCSS(basePath);
+      } else {
+        setupForm(basePath);
+        handleCSS(basePath);
+      }
     });
   } else {
-    document.getElementById("app").innerHTML = "<p>Page not found. Please check the URL.</p>";
+    document.getElementById("app").innerHTML =
+      "<p>Page not found. Please check the URL.</p>";
   }
 }
 
 function setupForm(path) {
   // Simplified for clarity
-  const formId = {
-    "/": "login-form",
-    "signup": "signup-form",
-    "forgot": "forgot-form"
-  }[path] || "login-form";  // Default to login-form if path is '/'
+  const formId =
+    {
+      "/": "login-form",
+      signup: "signup-form",
+      forgot: "forgot-form",
+    }[path] || "login-form"; // Default to login-form if path is '/'
 
   const form = document.getElementById(formId);
   if (form) {
-    form.onsubmit = function(event) {
+    form.onsubmit = function (event) {
       event.preventDefault();
-      const action = { "/": login, "signup": signup, "forgot": forgotPassword }[path];
+      const action = { "/": login, signup: signup, forgot: forgotPassword }[
+        path
+      ];
       action();
     };
   }
@@ -65,13 +82,14 @@ function setupForm(path) {
 function handleCSS(path) {
   const requiredCSS = {
     "/": ["common.css", "styles.css"],
-    "forgot": ["forgot.css", "common.css", "styles.css"],
-    "signup": ["common.css", "styles.css"],
-    "skills": ["skills.css"]
+    forgot: ["forgot.css", "common.css", "styles.css"],
+    signup: ["common.css", "styles.css"],
+    skills: ["skills.css"],
+    info: ["info.css"],
   };
 
   // Remove all CSS not needed for the current path
-  Array.from(currentCSS).forEach(css => {
+  Array.from(currentCSS).forEach((css) => {
     if (!requiredCSS[path].includes(css)) {
       removeCSS(css);
       currentCSS.delete(css);
@@ -79,7 +97,7 @@ function handleCSS(path) {
   });
 
   // Add required CSS for the current path
-  requiredCSS[path].forEach(css => {
+  requiredCSS[path].forEach((css) => {
     if (!currentCSS.has(css)) {
       injectCSS(css);
       currentCSS.add(css);
@@ -88,7 +106,7 @@ function handleCSS(path) {
 }
 
 function injectCSS(file) {
-  const id = file.replace('.css', '') + '-style';
+  const id = file.replace(".css", "") + "-style";
   let link = document.getElementById(id);
   if (!link) {
     link = document.createElement("link");
@@ -101,7 +119,7 @@ function injectCSS(file) {
 }
 
 function removeCSS(file) {
-  const id = file.replace('.css', '') + '-style';
+  const id = file.replace(".css", "") + "-style";
   const link = document.getElementById(id);
   if (link) {
     link.parentNode.removeChild(link);
