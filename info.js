@@ -1,9 +1,5 @@
 import { courseData } from "./courseData.js";
 
-function loadTechnologyInfo() {
-  let tech = window.location.hash.substring(1).split("/")[1];
-  populateInfo(tech);
-}
 
 export function populateInfo(data) {
   document.getElementById("title").textContent = courseData[data].title;
