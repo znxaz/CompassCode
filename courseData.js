@@ -77,69 +77,67 @@ export let courseData = {
       "CSS3 is the latest standard for Cascading Style Sheets (CSS). It brings new features and improvements over CSS2, enhancing the capabilities for colors, gradients, transitions, animations, and more.",
     freeResources: [
       {
-        name: "MDN Web Docs",
+        name: "MDN Web Docs on CSS",
         url: "https://developer.mozilla.org/en-US/docs/Web/CSS",
       },
-      { name: "W3Schools CSS Tutorial", url: "https://www.w3schools.com/css/" },
-      { name: "CSS-Tricks", url: "https://css-tricks.com/" },
       {
-        name: "Codecademy CSS Course",
+        name: "W3Schools CSS Tutorial",
+        url: "https://www.w3schools.com/css/",
+      },
+      {
+        name: "CSS-Tricks Articles",
+        url: "https://css-tricks.com/",
+      },
+      {
+        name: "Codecademy's Learn CSS Course",
         url: "https://www.codecademy.com/learn/learn-css",
       },
       {
-        name: "freeCodeCamp",
+        name: "freeCodeCamp's Responsive CSS Tutorial",
         url: "https://www.freecodecamp.org/learn/responsive-web-design/#basic-css",
-      },
-      {
-        name: "CSS Full Course - Build a Website Tutorial by freeCodeCamp",
-        url: "https://www.youtube.com/watch?v=yfoY53QXEnI",
-      },
-      {
-        name: "CSS Tutorial for Beginners by Programming with Mosh",
-        url: "https://www.youtube.com/watch?v=1Rs2ND1ryYc",
       },
     ],
     videoResources: [
       {
-        name: "CSS Tutorial for Beginners: CSS Crash Course [2021]",
+        name: "CSS Crash Course for Beginners [2021] Video",
         url: "https://www.youtube.com/watch?v=yfoY53QXEnI",
       },
       {
-        name: "Learn CSS - Full Tutorial for Beginners (2022)",
+        name: "Full CSS Tutorial for Beginners [2022] Video",
         url: "https://youtu.be/1PnVor36_40?si=Ln4xn_xMw64IHV2M",
       },
       {
-        name: "CSS Full Course - Build a Website Tutorial",
+        name: "freeCodeCamp's CSS Website Build Tutorial Video",
         url: "https://www.youtube.com/watch?v=1Rs2ND1ryYc",
       },
       {
-        name: "Learn CSS in 12 Minutes",
-        url: "https://www.youtube.com/watch?v=0afZj1G0BIE",
+        name: "Programming with Mosh's CSS for Beginners Video",
+        url: "https://www.youtube.com/watch?v=1Rs2ND1ryYc",
       },
       {
-        name: "CSS3 Tutorial For Beginners - part 1 of 6 - Getting Started",
+        name: "CSS3 for Beginners Tutorial Series: Part 1 Video",
         url: "https://www.youtube.com/watch?v=r1xBCi5SOjw",
       },
     ],
     paidResources: [
       {
-        name: "CSS: The Missing Manual by David Sawyer McFarland",
+        name: '"CSS: The Missing Manual" Book by David McFarland',
         url: "https://www.amazon.com/CSS-Missing-David-Sawyer-McFarland/dp/1491918055/",
       },
       {
-        name: "Learning Web Design: A Beginner's Guide to HTML, CSS, JavaScript, and Web Graphics by Jennifer Robbins",
+        name: '"Learning Web Design" Book by Jennifer Robbins',
         url: "https://www.amazon.com/Learning-Web-Design-Beginners-Javascript/dp/1491960205",
       },
       {
-        name: "Udemy: CSS - The Complete Guide 2021 (incl. Flexbox, Grid & Sass)",
+        name: "Udemy's Complete CSS Guide 2021 Course",
         url: "https://www.udemy.com/course/css-the-complete-guide-incl-flexbox-grid-sass/",
       },
       {
-        name: "Pluralsight: CSS Fundamentals",
+        name: "Pluralsight's CSS Fundamentals Course",
         url: "https://www.pluralsight.com/courses/css-fundamentals",
       },
       {
-        name: "LinkedIn Learning: CSS Essential Training",
+        name: "LinkedIn Learning's CSS Essential Training Course",
         url: "https://www.linkedin.com/learning/css-essential-training-3",
       },
     ],
@@ -300,7 +298,7 @@ export let courseData = {
   },
   php: {
     title: "PHP Programming",
-    image: "./images/PHP.png",
+    image: "./images/PHP.webp",
     alt: "PHP Programming",
     description:
       "PHP is a popular server-side scripting language that is integral to web development, especially for creating dynamic and interactive websites. Learn about PHP fundamentals, advanced features, and how to integrate with databases.",
@@ -590,8 +588,7 @@ export let courseData = {
       },
     ],
   },
-  sql: 
-  {
+  sql: {
     title: "SQL Programming",
     image: "./images/SQL.png",
     alt: "SQL Programming",
@@ -663,5 +660,5 @@ export let courseData = {
         url: "https://www.coursera.org/learn/sql-for-data-science",
       },
     ],
-  }
+  },
 };

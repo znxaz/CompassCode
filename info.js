@@ -1,6 +1,5 @@
 import { courseData } from "./courseData.js";
 
-
 export function populateInfo(data) {
   document.getElementById("title").textContent = courseData[data].title;
   var logo = document.getElementById("techLogo");
@@ -17,14 +16,15 @@ export function createList(tech, freeList, videoList, paidList) {
 }
 
 function compileList(id, resources) {
- var ul = document.getElementById(id)
+ var table = document.getElementById(id)
   resources.forEach((resource) => {
-    let li = document.createElement("li");
-    let a = document.createElement("a");
-    a.href = resource.url;
-    a.textContent = resource.name;
-    a.target = "_blank";
-    li.appendChild(a);
-    ul.appendChild(li);
+    let tr = document.createElement("tr");
+    let td = document.createElement("td");
+    td.innerText = resource.name;
+    tr.appendChild(td);
+    let td2 = document.createElement("td");
+    td2.innerText = resource.url; 
+    tr.appendChild(td2)
+    table.appendChild(tr);
   });
 }
