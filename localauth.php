@@ -2,8 +2,7 @@
 require __DIR__ . '/db.php';
 
 function loginHandler($pdo)
-{
-    if ($_SERVER["REQUEST_METHOD"] === "POST") {
+{   if ($_SERVER["REQUEST_METHOD"] === "POST") {
         $jsonData = file_get_contents('php://input');
         $data = json_decode($jsonData, true);
         $_REQUEST = $data;
@@ -12,12 +11,14 @@ function loginHandler($pdo)
 
         try {
             $checkUsernameQuery = $pdo->prepare(
-                "SELECT username, password FROM users WHERE username = :username"
+                "SELECT username, uuid, password FROM users WHERE username = :username"
             );
             $checkUsernameQuery->bindParam(":username", $username);
             $checkUsernameQuery->execute();
             $user = $checkUsernameQuery->fetch(PDO::FETCH_ASSOC);
             if ($user && password_verify($password, $user['password'])) {
+                $_SESSION['uuid'] = $user['uuid'];
+                $_SESSION['logged_in'] = true; 
                 echo json_encode([
                     'success' => true,
                     'message' => 'Successfully logged in.',

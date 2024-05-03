@@ -12,6 +12,18 @@
   z-index: 1;
 }
 
+.logo-container {
+  position: absolute;
+  top: -5em;
+  left: -8.5em;
+  width: 30em;
+  height: 30em;
+  background-image: url("./images/zo-04.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
+
 .navbar {
   top: 1;
   left: 1;
@@ -30,6 +42,7 @@
 
 .seperator {
   width: 100%;
+  margin: 5em;
 }
 .menuLine {
   width: 35px;

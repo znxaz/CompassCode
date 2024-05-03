@@ -1,6 +1,5 @@
-import { login, signup, forgotPassword } from "./api.js";
+import { login, signup, forgotPassword, fetchCourseStatuses } from "./api.js";
 import { populateInfo } from "./info.js";
-
 const currentCSS = new Set(); // Keeps track of currently injected CSS files
 
 async function fetchHTML(url) {
@@ -36,7 +35,7 @@ function router() {
   };
 
   const hash = window.location.hash.substring(1);
-  var basePath = hash.split("/")[0] || "/" ;
+  var basePath = hash.split("/")[0] || "/";
   var subPath = hash.split("/")[1];
   const contentURL =
     routes[basePath] ||
@@ -46,6 +45,9 @@ function router() {
     loadContent(contentURL, () => {
       if (basePath === "info" && subPath) {
         populateInfo(subPath);
+        handleCSS(basePath);
+      } else if (basePath === "skills") {
+        fetchCourseStatuses();
         handleCSS(basePath);
       } else {
         setupForm(basePath);
@@ -59,7 +61,7 @@ function router() {
 }
 
 function setupForm(path) {
-  // Simplified for clarity
+  
   const formId =
     {
       "/": "login-form",

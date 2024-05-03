@@ -1,5 +1,7 @@
 RewriteEngine On
 
+AddType application/javascript .js
+
 # Serve index.html for the root
 RewriteRule ^$ /index.html [L]
 

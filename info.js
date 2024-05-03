@@ -23,8 +23,12 @@ function compileList(id, resources) {
     td.innerText = resource.name;
     tr.appendChild(td);
     let td2 = document.createElement("td");
-    td2.innerText = resource.url; 
-    tr.appendChild(td2)
+    let atag = document.createElement("a");
+    atag.href = resource.url;
+    atag.innerText = resource.url;
+    atag.target = "_blank"; 
+    td2.appendChild(atag); 
+    tr.appendChild(td2); 
     table.appendChild(tr);
   });
 }

@@ -1,4 +1,68 @@
 export let courseData = {
+  gettingstarted : {
+    title: "Understanding the Web",
+    image: "./images/introIcon.png",
+    alt: "Internet Basics",
+    description: "Discover the fundamental concepts behind the web, including how browsers work, the role of web servers, and the basics of internet communication.",
+    freeResources: [
+      {
+        name: "What is the Internet?",
+        url: "https://www.khanacademy.org/computing/computer-science/internet-intro",
+      },
+      {
+        name: "How Do Web Browsers Work?",
+        url: "https://www.explainthatstuff.com/how-web-browsers-work.html",
+      },
+      {
+        name: "Beginner's Guide to Browsers",
+        url: "https://www.computerhope.com/jargon/i/internet.htm",
+      },
+      {
+        name: "Understanding Web Servers and How They Work",
+        url: "https://www.hostingadvice.com/the-basics/",
+      },
+      {
+        name: "Internet 101 - What is the Internet?",
+        url: "https://edu.gcfglobal.org/en/internetbasics/what-is-the-internet/1/",
+      },
+    ],
+    videoResources: [
+      {
+        name: "How Does the Internet Work?",
+        url: "https://www.youtube.com/watch?v=7_LPdttKXPc",
+      },
+      {
+        name: "Understanding Web Browsers",
+        url: "https://www.youtube.com/watch?v=WjDrMKZWCt0",
+      },
+      {
+        name: "What is a Web Server?",
+        url: "https://www.youtube.com/watch?v=Yt1nesKi5Ec",
+      },
+      {
+        name: "The World Wide Web: Crash Course Computer Science",
+        url: "https://www.youtube.com/watch?v=guvsH5OFizE",
+      },
+    ],
+    paidResources: [
+      {
+        name: "Internet History, Technology, and Security - Coursera",
+        url: "https://www.coursera.org/learn/internet-history",
+      },
+      {
+        name: "Understanding Computers and the Internet - Harvard Online",
+        url: "https://online-learning.harvard.edu/course/understanding-computers-and-internet",
+      },
+      {
+        name: "Networking and Security Architecture with VMware NSX",
+        url: "https://www.pluralsight.com/courses/networking-security-architecture-vmware-nsx",
+      },
+      {
+        name: "Computer Networks and the Internet - Udemy",
+        url: "https://www.udemy.com/course/computer-networks-and-internet-protocol/",
+      },
+    ],
+  }, 
   html: {
     title: "HTML5",
     image: "./images/HTML.png",
@@ -144,7 +208,7 @@ export let courseData = {
   },
   cpp: {
     title: "C++ Programming",
-    image: "./images/CPP.png",
+    image: "./images/C++_logo.png",
     alt: "C++ Programming",
     description:
       "C++ is a powerful, high-performance programming language suitable for system programming, game development, and more. Learn about object-oriented programming, memory management, and other advanced concepts.",
