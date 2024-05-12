@@ -1,5 +1,7 @@
 export let courseData = {
   gettingstarted : {
+    courseId: "1",
+    dataHash: "info/gettingstarted", 
     title: "Understanding the Web",
     image: "./images/introIcon.png",
     alt: "Internet Basics",
@@ -65,6 +67,8 @@ export let courseData = {
   }, 
   html: {
     title: "HTML5",
+    courseId: "5",
+    dataHash: "info/html", 
     image: "./images/HTML.png",
     alt: "HTML5",
     description:
@@ -135,6 +139,8 @@ export let courseData = {
   },
   css: {
     title: "CSS3",
+    courseId: "6",
+    dataHash: "info/css", 
     image: "./images/CSS.png",
     alt: "CSS3",
     description:
@@ -208,6 +214,8 @@ export let courseData = {
   },
   cpp: {
     title: "C++ Programming",
+    courseId: "2",
+    dataHash: "info/cpp", 
     image: "./images/C++_logo.png",
     alt: "C++ Programming",
     description:
@@ -281,6 +289,8 @@ export let courseData = {
   },
   java: {
     title: "Java Programming",
+    courseId: "3",
+    dataHash: "info/java",
     image: "./images/JAVA.png",
     alt: "Java Programming",
     description:
@@ -362,6 +372,10 @@ export let courseData = {
   },
   php: {
     title: "PHP Programming",
+    courseId: "9",
+    dataHash: "info/php", 
+    courseId: "9",
+    dataHash: "info/php",
     image: "./images/PHP.webp",
     alt: "PHP Programming",
     description:
@@ -435,6 +449,8 @@ export let courseData = {
   },
   python: {
     title: "Python Programming",
+    courseId: "4",
+    dataHash: "info/python", 
     image: "./images/PYTHON.png",
     alt: "Python Programming",
     description:
@@ -508,6 +524,8 @@ export let courseData = {
   },
   nodejs: {
     title: "Node.js Programming",
+    courseId: "8",
+    dataHash: "info/nodejs", 
     image: "./images/NODEJS.png",
     alt: "Node.js Programming",
     description:
@@ -581,6 +599,8 @@ export let courseData = {
   },
   javascript: {
     title: "JavaScript Programming",
+    courseId: "7",
+    dataHash: "info/javascript", 
     image: "./images/JAVASCRIPT.png",
     alt: "JavaScript Programming",
     description:
@@ -654,6 +674,8 @@ export let courseData = {
   },
   sql: {
     title: "SQL Programming",
+    courseId: "10",
+    dataHash: "info/sql", 
     image: "./images/SQL.png",
     alt: "SQL Programming",
     description:

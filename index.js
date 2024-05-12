@@ -1,5 +1,6 @@
 import { login, signup, forgotPassword, fetchCourseStatuses } from "./api.js";
 import { populateInfo } from "./info.js";
+import { loadSkills } from "./skills.js";
 const currentCSS = new Set(); // Keeps track of currently injected CSS files
 
 async function fetchHTML(url) {
@@ -48,8 +49,9 @@ function router() {
         handleCSS(basePath);
       } else if (basePath === "skills") {
         fetchCourseStatuses();
+        loadSkills(); 
         handleCSS(basePath);
-      } else {
+      }else {
         setupForm(basePath);
         handleCSS(basePath);
       }
@@ -61,7 +63,6 @@ function router() {
 }
 
 function setupForm(path) {
-  
   const formId =
     {
       "/": "login-form",
